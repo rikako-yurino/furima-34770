@@ -16,7 +16,8 @@
 ### Association
 
 - has_many :items
-- has_many :orders
+- belongs_to :order
+- has_one :delivery
 
 ## items テーブル
 
@@ -45,6 +46,7 @@
 ### Association
 
 - belongs_to :user
+- belongs_to :item
 
 
 ## deliveries テーブル
@@ -62,4 +64,3 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :item
