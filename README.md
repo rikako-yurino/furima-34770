@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column               | Type    | Options     |
-| -------------------- | ------- | ----------- |
-| nickname             | string  | null: false |
-| email                | string  | null: false |
-| encrypted_password   | string  | null: false |
-| last_name            | string  | null: false |
-| first_name           | string  | null: false |
-| last_name_kana       | string  | null: false |
-| first_name_kana      | string  | null: false |
-| birthday             | date    | null: false |
+| Column               | Type    | Options                 |
+| -------------------- | ------- | ----------------------- |
+| nickname             | string  | null: false             |
+| email                | string  | null: false,unique:true |
+| encrypted_password   | string  | null: false             |
+| last_name            | string  | null: false             |
+| first_name           | string  | null: false             |
+| last_name_kana       | string  | null: false             |
+| first_name_kana      | string  | null: false             |
+| birthday             | date    | null: false             |
 
 ### Association
 
@@ -22,26 +22,28 @@
 
 | Column              | Type          | Options                        |
 | ------------------- |  ------------ | ------------------------------ |
+| product_name        | string        | null: false                    |
+| price               | integer       | null: false                    |
 | description_product | text          | null: false                    |
 | category_id         | integer       | null: false                    |
 | item_status_id      | integer       | null: false                    |
 | delivery_burden_id  | integer       | null: false                    |
 | delivery_area_id    | integer       | null: false                    |
 | shipping_time_id    | integer       | null: false                    |
-| seller_user_id      | references    | null: false                    |
+| user                | references    | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_one :oder
+- has_one :order
 
 
 ## orders テーブル
 
 | Column   | Type        | Options                        |
 | -------- | ----------- | ------------------------------ |
-| user_id  | references  | null: false, foreign_key: true |
-| item_id  | references  | null: false, foreign_key: true |
+| user     | references  | null: false, foreign_key: true |
+| item     | references  | null: false, foreign_key: true |
 
 ### Association
 
@@ -60,6 +62,7 @@
 | block           | string      | null: false                    |
 | building        | string      |                                |
 | phone_number    | string      | null: false                    |
+| order           | references  | null: false, foreign_key: true |
 
 ### Association
 
