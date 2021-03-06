@@ -16,8 +16,7 @@
 ### Association
 
 - has_many :items
-- belongs_to :order
-- has_one :delivery
+- has_many :orders
 
 ## items テーブル
 
@@ -39,15 +38,16 @@
 
 ## orders テーブル
 
-| Column          | Type        | Options                        |
-| --------------- | ----------- | ------------------------------ |
-| seller_user_id  | references  | null: false, foreign_key: true |
-| buyer_user_id   | references  | null: false, foreign_key: true |
+| Column   | Type        | Options                        |
+| -------- | ----------- | ------------------------------ |
+| user_id  | references  | null: false, foreign_key: true |
+| item_id  | references  | null: false, foreign_key: true |
 
 ### Association
 
-- has_many :users
+- belongs_to :user
 - belongs_to :item
+- has_one :delivery
 
 
 ## deliveries テーブル
@@ -63,4 +63,4 @@
 
 ### Association
 
-- belongs_to :user
+- belongs_to :order
