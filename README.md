@@ -42,7 +42,6 @@
 
 | Column          | Type        | Options                        |
 | --------------- | ----------- | ------------------------------ |
-<<<<<<< HEAD
 | seller_user_id  | references  | null: false, foreign_key: true |
 | buyer_user_id   | references  | null: false, foreign_key: true |
 
@@ -58,21 +57,10 @@
 | --------------- | ----------- | ------------------------------ |
 | postcode        | string      | null: false                    |
 | prefecture_id   | integer     | null: false                    |
-=======
-| card_number     | integer     | null: false                    |
-| expiration_date | integer     | null: false                    |
-| security_code   | integer     | null: false                    |
-| postcode        | integer     | null: false                    |
-| prefectures     | string      | null: false                    |
->>>>>>> parent of cd917b7 (データベース設計修正)
 | city            | string      | null: false                    |
 | block           | string      | null: false                    |
 | building        | string      | null: false, foreign_key: true |
 | phone_number    | integer     | null: false, foreign_key: true |
-| seller_id       | references  | null: false, foreign_key: true |
-| buyer_id        | references  | null: false, foreign_key: true |
-| price           | references  | null: false, foreign_key: true |
-| product_name    | references  | null: false, foreign_key: true |
 
 ### Association
 
