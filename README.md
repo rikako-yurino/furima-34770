@@ -30,6 +30,7 @@
 | delivery_burden_id  | integer       | null: false                    |
 | delivery_area_id    | integer       | null: false                    |
 | shipping_time_id    | integer       | null: false                    |
+| image               | text          | null: false                    |
 | user                | references    | null: false, foreign_key: true |
 
 ### Association
