@@ -17,12 +17,12 @@ class Item < ApplicationRecord
       numericality: { only_integer: true, message: "Half-width number"}
     validates :description_product
     validates :image
-    with_options numericality: { other_than: 1, message: "Select"} do 
-      validates :category_id
-      validates :item_status_id
-      validates :delivery_burden_id
-      validates :delivery_area_id
-      validates :shipping_time_id
-    end
+  end
+  with_options numericality: { other_than: 1, message: "Select"} do 
+    validates :category_id
+    validates :item_status_id
+    validates :delivery_burden_id
+    validates :delivery_area_id
+    validates :shipping_time_id
   end
 end
