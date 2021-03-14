@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :delivery_area
   belongs_to :shipping_time
   has_one_attached :image
-  # has_one :order
+  has_one :order
 
   with_options presence: true do 
     validates :product_name
