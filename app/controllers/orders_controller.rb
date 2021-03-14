@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    if current_user == @item.user or Order.where(item_id: @item.id).present?
+    if current_user == @item.user || Order.where(item_id: @item.id).present?
       redirect_to root_path
     end
 
