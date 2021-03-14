@@ -6,6 +6,6 @@ FactoryBot.define do
     city               {Faker::Lorem.sentence}
     block              {Faker::Lorem.sentence}
     building           {Faker::Lorem.sentence}
-    phone_number       {99999999999}
+    phone_number       {"99999999999"}
   end
 end
