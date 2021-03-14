@@ -8,6 +8,8 @@ class OrderDelivery
     validates :prefecture_id, numericality: { other_than: 1, message: "Select"} 
     validates :city
     validates :block
+    validates :user_id
+    validates :item_id
     validates :phone_number, format:{with: /\A\d{10}$|^\d{11}\z/, message: "Input correctly"}
   end
   

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :orders
 
   with_options presence: true do  
-    validates :email, uniqueness: true
+    validates :email
     validates :birthday
     validates :nickname
     validates :password, format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{7,}/, message: "Include both letters and numbers"}
