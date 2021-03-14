@@ -5,10 +5,13 @@ class OrdersController < ApplicationController
   def index
     @order_delivery = OrderDelivery.new
     @item = Item.find(params[:item_id])
+    if current_user == @item.user
+      redirect_to root_path
+    end
   end
 
   def create
-    @order_delivery = OrderDelivery.new(order_params)
+    v = OrderDelivery.new(order_params)
     if @order_delivery.valid?
       pay_item
       @order_delivery.save
