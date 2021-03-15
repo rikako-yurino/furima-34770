@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_item
   before_action :move_to_index, only:[:index, :create]
 
+  
   def index
     @order_delivery = OrderDelivery.new
   end
