@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :email
     validates :birthday
     validates :nickname
-    validates :password, format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{7,}/, message: "Include both letters and numbers"}
+    validates :password, format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: "Include both letters and numbers"}
     
     with_options format:{with:/\A[ぁ-んァ-ン一-龥々]+\z/, message: "Full-width characters"} do  
       validates :last_name
